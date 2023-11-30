@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#SBATCH --job-name=test
+#SBATCH --output=output.out
+
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+
+#SBATCH --output=output.log
+
+export TOPAS_G4_DATA_DIR=/opt/topas/3.8.1/G4Data
+
+/opt/topas/3.9/bin/topas Record.txt
+
+exit 0
+EOT

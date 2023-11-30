@@ -1,0 +1,475 @@
+
+Welcome to TOPAS, Tool for Particle Simulation (Version 3.9)
+Loading parameters starting from: Record.txt
+
+Geant4 Data directory has been specified by the
+TOPAS_G4_DATA_DIR environment variable as /opt/topas/3.8.1/G4Data
+
+**************************************************************
+ Geant4 version Name: geant4-10-07-patch-03 [MT]   (19-November-2021)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+TOPAS is in MT mode, setting number of threads to: 15
+
+TOPAS set the tolerances based on the World size to:
+      Surface tolerance = 0.02 nm, and radial tolerance = 0.02 nm.
+Checking overlaps for volume RW3 (G4Box) ... OK! 
+Creating parallel world: RW3detecter
+Checking overlaps for volume RW3detecter (G4Box) ... OK! 
+
+Checking for Unused Components.
+These are Components that were never built even though they were at least
+partially defined in some parameters. This is not necessarily an error.
+It may be an intentional choice to have these Component definitions handy for later use.
+To turn off this check, set Ge/CheckForUnusedComponents to False
+  No unused components were found.
+
+Visualization verbosity changed to quiet (0)
+
+### ===  Deexcitation model UAtomDeexcitation is activated for 1 region:
+          DefaultRegionForTheWorld  1  0  0
+### ===  Ignore cuts flag:   0
+
+phot:  for gamma SubType=12 BuildTable=0
+      LambdaPrime table from 200 keV to 500 MeV in 71 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric : Emin=    0 eV  Emax=  500 MeV  SauterGavrila Fluo
+
+compt:  for gamma SubType=13 BuildTable=1
+      Lambda table from 100 eV  to 1 MeV, 21 bins/decade, spline: 1
+      LambdaPrime table from 1 MeV to 500 MeV in 56 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LowEPComptonModel : Emin=    0 eV  Emax=   20 MeV Fluo
+        KleinNishina : Emin=   20 MeV Emax=  500 MeV Fluo
+
+conv:  for gamma SubType=14 BuildTable=1
+      Lambda table from 1.022 MeV to 500 MeV, 33 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+      BetheHeitler5D : Emin=    0 eV  Emax=  500 MeV  ModifiedTsai
+
+Rayl:  for gamma SubType=11 BuildTable=1
+      Lambda table from 100 eV  to 100 keV, 21 bins/decade, spline: 0
+      LambdaPrime table from 100 keV to 500 MeV in 77 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh : Emin=    0 eV  Emax=  500 MeV  CullenGenerator
+
+msc:  for e-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  GoudsmitSaunderson : Emin=    0 eV  Emax=  100 MeV Nbins=120 100 eV  - 100 MeV
+              StepLim=SafetyPlus Rfact=0.08 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+        WentzelVIUni : Emin=  100 MeV Emax=  500 MeV Nbins=20 100 MeV - 500 MeV
+              StepLim=SafetyPlus Rfact=0.08 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+eIoni:  for e-  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.2, 0.01 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       LowEnergyIoni : Emin=    0 eV  Emax=  100 keV  deltaVI
+        MollerBhabha : Emin=  100 keV Emax=  500 MeV  deltaVI
+
+eBrem:  for e-  SubType=3
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      LPM flag: 1 for E > 0.5 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=  500 MeV  AngularGen2BS
+
+ePairProd:  for e-  SubType=4
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      Sampling table 4x1001; from 0.1 GeV to 0.0005 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           ePairProd : Emin=    0 eV  Emax=  500 MeV  ModifiedMephi
+
+CoulombScat:  for e-, integral:1  SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 500 MeV, 21 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  500 MeV
+
+msc:  for e+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  GoudsmitSaunderson : Emin=    0 eV  Emax=  100 MeV Nbins=120 100 eV  - 100 MeV
+              StepLim=SafetyPlus Rfact=0.08 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+        WentzelVIUni : Emin=  100 MeV Emax=  500 MeV Nbins=20 100 MeV - 500 MeV
+              StepLim=SafetyPlus Rfact=0.08 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+eIoni:  for e+  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.2, 0.01 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             PenIoni : Emin=    0 eV  Emax=  100 keV
+        MollerBhabha : Emin=  100 keV Emax=  500 MeV  deltaVI
+
+eBrem:  for e+  SubType=3
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      LPM flag: 1 for E > 0.5 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=  500 MeV  AngularGen2BS
+
+ePairProd:  for e+  SubType=4
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      Sampling table 4x1001; from 0.1 GeV to 0.0005 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           ePairProd : Emin=    0 eV  Emax=  500 MeV  ModifiedMephi
+
+annihil:  for e+, integral:1  SubType=5 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg : Emin=    0 eV  Emax=  500 MeV
+
+CoulombScat:  for e+, integral:1  SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 500 MeV, 21 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  500 MeV
+
+msc:  for proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+hIoni:  for proton  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.05 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV  deltaVI
+          BetheBloch : Emin=    2 MeV Emax=  500 MeV  deltaVI
+
+CoulombScat:  for proton, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 500 MeV, 21 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  500 MeV
+
+nuclearStopping:  for proton SubType=8 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping : Emin=    0 eV  Emax=    1 MeV
+
+msc:  for GenericIon  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+ionIoni:  for GenericIon  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+         ParamICRU73 : Emin=    0 eV  Emax=  500 MeV  deltaVI
+
+nuclearStopping:  for GenericIon SubType=8 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping : Emin=    0 eV  Emax=    1 MeV
+
+msc:  for alpha  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+ionIoni:  for alpha  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.02 mm), integ: 1, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=7.9452 MeV  deltaVI
+          BetheBloch : Emin=7.9452 MeV Emax=  500 MeV  deltaVI
+
+nuclearStopping:  for alpha SubType=8 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   ICRU49NucStopping : Emin=    0 eV  Emax=    1 MeV
+
+msc:  for anti_proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+hIoni:  for anti_proton  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.05 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=    2 MeV  deltaVI
+          BetheBloch : Emin=    2 MeV Emax=  500 MeV  deltaVI
+
+CoulombScat:  for anti_proton, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 500 MeV, 21 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  500 MeV
+
+msc:  for kaon+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+hIoni:  for kaon+  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.05 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=1.05231 MeV  deltaVI
+          BetheBloch : Emin=1.05231 MeV Emax=  500 MeV  deltaVI
+
+CoulombScat:  for kaon+, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 500 MeV, 21 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  500 MeV
+
+msc:  for kaon-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+hIoni:  for kaon-  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.05 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=1.05231 MeV  deltaVI
+          BetheBloch : Emin=1.05231 MeV Emax=  500 MeV  deltaVI
+
+CoulombScat:  for kaon-, integral:1  SubType=1 BuildTable=1
+      Used Lambda table of kaon+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  500 MeV
+
+msc:  for mu+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+muIoni:  for mu+  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.05 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=  200 keV  deltaVI
+          BetheBloch : Emin=  200 keV Emax=  500 MeV  deltaVI
+
+CoulombScat:  for mu+, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 500 MeV, 21 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  500 MeV
+
+msc:  for mu-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+muIoni:  for mu-  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.05 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=  200 keV  deltaVI
+          BetheBloch : Emin=  200 keV Emax=  500 MeV  deltaVI
+
+CoulombScat:  for mu-, integral:1  SubType=1 BuildTable=1
+      Used Lambda table of mu+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  500 MeV
+
+msc:  for pi+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+hIoni:  for pi+  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.05 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=297.505 keV  deltaVI
+          BetheBloch : Emin=297.505 keV Emax=  500 MeV  deltaVI
+
+CoulombScat:  for pi+, integral:1  SubType=1 BuildTable=1
+      Lambda table from threshold  to 500 MeV, 21 bins/decade, spline: 1
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  500 MeV
+
+msc:  for pi-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  500 MeV Nbins=140 100 eV  - 500 MeV
+              StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=3 Llimit=1
+
+hIoni:  for pi-  SubType=2
+      dE/dx and range tables from 100 eV  to 500 MeV in 140 bins
+      Lambda tables from threshold to 500 MeV, 20 bins/decade, spline: 1
+      StepFunction=(0.1, 0.05 mm), integ: 1, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=297.505 keV  deltaVI
+          BetheBloch : Emin=297.505 keV Emax=  500 MeV  deltaVI
+
+CoulombScat:  for pi-, integral:1  SubType=1 BuildTable=1
+      Used Lambda table of pi+
+      ThetaMin(p) < Theta(degree) < 180; pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  500 MeV
+
+=======================================================================
+--> G4MTRunManager::CreateAndStartWorkers() --> Initializing workers...
+=======================================================================
+
+G4WT14 > Begin processing for Run: 0, History: 0
+G4WT14 > Begin processing for Run: 0, History: 10000000
+G4WT11 > Begin processing for Run: 0, History: 20000000
+G4WT0 > Begin processing for Run: 0, History: 30000000
+G4WT6 > Begin processing for Run: 0, History: 40000000
+G4WT0 > Begin processing for Run: 0, History: 50000000
+G4WT1 > Begin processing for Run: 0, History: 60000000
+G4WT7 > Begin processing for Run: 0, History: 70000000
+G4WT14 > Begin processing for Run: 0, History: 80000000
+G4WT6 > Begin processing for Run: 0, History: 90000000
+
+TOPAS run sequence complete.
+Particle source Demo: Total number of histories: 0
+Particle source Example: Total number of histories: 100000000
+
+Scorer: RW3EnergyDeposit
+Results have been written to file: ../EnergyDeposit/RW3_DDP_EnergyDeoposit7.csv
+Scored in component: RW3detecter
+X in 1 bin  of 0.135 cm
+Y in 34 bins of 0.5 cm
+Z in 1 bin  of 0.135 cm
+EnergyDeposit ( MeV ) : Sum   Mean   Standard_Deviation   
+0, 0, 0, 21.25864601135254, 2.125864513098203e-07, 8.234930558310944e-05
+0, 1, 0, 21.56038284301758, 2.156038255530205e-07, 8.618845729539173e-05
+0, 2, 0, 19.54710388183594, 1.954710408060449e-07, 8.110674265078545e-05
+0, 3, 0, 19.50466346740723, 1.950466378905748e-07, 8.027925653386632e-05
+0, 4, 0, 16.5731201171875, 1.657312023794892e-07, 7.187481972305584e-05
+0, 5, 0, 16.91183280944824, 1.691183241090425e-07, 7.346249376278401e-05
+0, 6, 0, 15.74812316894531, 1.574812334028436e-07, 6.923054420965331e-05
+0, 7, 0, 14.35398578643799, 1.435398547269169e-07, 6.947587574334543e-05
+0, 8, 0, 14.67854022979736, 1.467854008574103e-07, 7.171331925182545e-05
+0, 9, 0, 12.24679183959961, 1.224679175299887e-07, 6.15938506124952e-05
+0, 10, 0, 11.65985488891602, 1.165985457050308e-07, 6.268519170178394e-05
+0, 11, 0, 10.49051380157471, 1.049051426863898e-07, 5.699908270967085e-05
+0, 12, 0, 9.510795593261719, 9.510795368554647e-08, 5.476444155816238e-05
+0, 13, 0, 8.773431777954102, 8.773431994991361e-08, 5.228972544497772e-05
+0, 14, 0, 8.422952651977539, 8.42295244279341e-08, 5.208915342917148e-05
+0, 15, 0, 7.32285737991333, 7.322857166426307e-08, 4.75378647947684e-05
+0, 16, 0, 6.863873958587646, 6.863874169225378e-08, 4.901872728538071e-05
+0, 17, 0, 6.669558525085449, 6.669558403201106e-08, 4.603510578237802e-05
+0, 18, 0, 6.073307037353516, 6.073307218884309e-08, 4.381668273633014e-05
+0, 19, 0, 4.774759292602539, 4.774759356154758e-08, 3.915214272039133e-05
+0, 20, 0, 5.203651428222656, 5.203651431508027e-08, 3.980707687332964e-05
+0, 21, 0, 5.40553092956543, 5.405531088239148e-08, 4.257649355941309e-05
+0, 22, 0, 4.237931728363037, 4.237931705837694e-08, 3.477302939355628e-05
+0, 23, 0, 4.50622034072876, 4.506220437467429e-08, 3.939795242329816e-05
+0, 24, 0, 3.293354034423828, 3.293354081523261e-08, 3.35554954671728e-05
+0, 25, 0, 3.510402679443359, 3.510402709824204e-08, 3.559392790711789e-05
+0, 26, 0, 3.25869083404541, 3.25869075226433e-08, 3.047657199326115e-05
+0, 27, 0, 2.830209016799927, 2.830208956550894e-08, 2.842309119168025e-05
+0, 28, 0, 2.571542978286743, 2.571543024861613e-08, 2.841166204652031e-05
+0, 29, 0, 2.630861043930054, 2.630861147448038e-08, 2.94041570333836e-05
+0, 30, 0, 2.172032117843628, 2.172032017164183e-08, 2.752122378883422e-05
+0, 31, 0, 1.931653261184692, 1.931653313682897e-08, 2.594623619230406e-05
+0, 32, 0, 1.668281674385071, 1.668281655064638e-08, 2.314969247093316e-05
+0, 33, 0, 1.462769150733948, 1.46276916585979e-08, 2.312544196840973e-05
+
+Scorer: RW3Fluence
+Results have been written to file: ../Fluence/RW3_DDP_Fluence7.csv
+Scored in component: RW3detecter
+X in 1 bin  of 0.135 cm
+Y in 34 bins of 0.5 cm
+Z in 1 bin  of 0.135 cm
+Fluence ( /mm2 ) : Sum   Mean   Standard_Deviation   
+0, 0, 0, 9333.9697265625, 9.333970006200166e-05, 0.006186235081355427
+0, 1, 0, 9154.580078125, 9.154580461303666e-05, 0.005930228109775382
+0, 2, 0, 8829.1796875, 8.829179589362424e-05, 0.005681098989616227
+0, 3, 0, 8352.470703125, 8.352470977695755e-05, 0.005410824836924583
+0, 4, 0, 7904.5595703125, 7.904559332141056e-05, 0.005177335073754345
+0, 5, 0, 7444.6640625, 7.444664187751048e-05, 0.004947208301074706
+0, 6, 0, 6997.189453125, 6.997189592608518e-05, 0.004718264534461642
+0, 7, 0, 6449.15625, 6.449156109430131e-05, 0.004494672127614809
+0, 8, 0, 6085.53125, 6.08553102941787e-05, 0.004308157686566931
+0, 9, 0, 5684.0556640625, 5.684055885114965e-05, 0.004135334041061658
+0, 10, 0, 5219.212890625, 5.219212741514416e-05, 0.003927426853001451
+0, 11, 0, 4833.67529296875, 4.833675199697818e-05, 0.003753588310229801
+0, 12, 0, 4491.11962890625, 4.491119692268584e-05, 0.00359373841478646
+0, 13, 0, 4190.1767578125, 4.190176613953128e-05, 0.003447163253650527
+0, 14, 0, 3890.8349609375, 3.890835034676991e-05, 0.003286762396471092
+0, 15, 0, 3551.807373046875, 3.551807305575845e-05, 0.003128748409256196
+0, 16, 0, 3264.9326171875, 3.26493252780706e-05, 0.002980944327990844
+0, 17, 0, 3038.306884765625, 3.038306874523404e-05, 0.002856343697692205
+0, 18, 0, 2782.990478515625, 2.782990410191626e-05, 0.002711197492006061
+0, 19, 0, 2565.075439453125, 2.5650754448918e-05, 0.00259308747357993
+0, 20, 0, 2377.76123046875, 2.377761165294328e-05, 0.002492085007776318
+0, 21, 0, 2181.0771484375, 2.181077260519622e-05, 0.002381358830780783
+0, 22, 0, 2004.542236328125, 2.004542244719422e-05, 0.002265292047330756
+0, 23, 0, 1877.302001953125, 1.877302004154154e-05, 0.002188305527864388
+0, 24, 0, 1698.859130859375, 1.698859187088844e-05, 0.0020756689528319
+0, 25, 0, 1536.330688476562, 1.536330741626426e-05, 0.001967784927207338
+0, 26, 0, 1433.958618164062, 1.433958625813596e-05, 0.001919678984981112
+0, 27, 0, 1269.405151367188, 1.269405106810345e-05, 0.001805607435234077
+0, 28, 0, 1170.232543945312, 1.170232507206342e-05, 0.001733221584865774
+0, 29, 0, 1039.432250976562, 1.039432232226924e-05, 0.001613201051929868
+0, 30, 0, 933.4016723632812, 9.334016725187642e-06, 0.001542355120461773
+0, 31, 0, 832.0800170898438, 8.320799890622259e-06, 0.001461447065652642
+0, 32, 0, 722.4354858398438, 7.224354722910108e-06, 0.001368900507048899
+0, 33, 0, 618.417236328125, 6.18417257145875e-06, 0.001292669882644081
+
+Scorer: RW3record
+Results have been written to file: ../DosetoMedium/RW3_DDP_DoseToMedium_7.csv
+Scored in component: RW3detecter
+X in 1 bin  of 0.135 cm
+Y in 34 bins of 0.5 cm
+Z in 1 bin  of 0.135 cm
+DoseToMedium ( Gy ) : Sum   Mean   Standard_Deviation   
+0, 0, 0, 3.737734459718922e-07, 3.737734375786876e-15, 1.447880748766901e-12
+0, 1, 0, 3.790786422541714e-07, 3.790786408801726e-15, 1.515381425505446e-12
+0, 2, 0, 3.436807958223653e-07, 3.436808057098484e-15, 1.426033777063802e-12
+0, 3, 0, 3.429346122629795e-07, 3.429346126403634e-15, 1.411484762836246e-12
+0, 4, 0, 2.913916716806852e-07, 2.913916707568121e-15, 1.263716397621317e-12
+0, 5, 0, 2.973469577227661e-07, 2.973469709396353e-15, 1.291631176758342e-12
+0, 6, 0, 2.768864248992031e-07, 2.768864224433967e-15, 1.217224255602852e-12
+0, 7, 0, 2.523744342397549e-07, 2.523744321440157e-15, 1.221537720084228e-12
+0, 8, 0, 2.580808029506443e-07, 2.580808114853892e-15, 1.260876866412698e-12
+0, 9, 0, 2.153253575443159e-07, 2.153253617351865e-15, 1.082954493820874e-12
+0, 10, 0, 2.050057190672305e-07, 2.050057234425044e-15, 1.102142655060725e-12
+0, 11, 0, 1.84446165008012e-07, 1.844461655951361e-15, 1.002168433216665e-12
+0, 12, 0, 1.672205627301082e-07, 1.67220566367663e-15, 9.628785584476909e-13
+0, 13, 0, 1.542561136602671e-07, 1.54256106912078e-15, 9.193676412205071e-13
+0, 14, 0, 1.48093917573533e-07, 1.480939104870956e-15, 9.158411468758322e-13
+0, 15, 0, 1.287518358594752e-07, 1.287518315080125e-15, 8.358195468250044e-13
+0, 16, 0, 1.206819035814988e-07, 1.206819074090437e-15, 8.618563455149957e-13
+0, 17, 0, 1.172654151559982e-07, 1.172654116072121e-15, 8.093977594320385e-13
+0, 18, 0, 1.067820107891748e-07, 1.067820128087792e-15, 7.703930343982297e-13
+0, 19, 0, 8.395070238975677e-08, 8.395070368618897e-16, 6.883802275735911e-13
+0, 20, 0, 9.149156454668628e-08, 9.149156362187001e-16, 6.998954011993458e-13
+0, 21, 0, 9.504105236146643e-08, 9.504104915157403e-16, 7.48587798502533e-13
+0, 22, 0, 7.451210137787712e-08, 7.451210047276485e-16, 6.113858456817586e-13
+0, 23, 0, 7.922920275404977e-08, 7.922920266187643e-16, 6.927020993147072e-13
+0, 24, 0, 5.790436219399453e-08, 5.790436166699851e-16, 5.899789385985977e-13
+0, 25, 0, 6.172054867192855e-08, 6.172055086540959e-16, 6.258190354465207e-13
+0, 26, 0, 5.729490482053734e-08, 5.729490458940588e-16, 5.358447356051764e-13
+0, 27, 0, 4.976125822508948e-08, 4.976125826637402e-16, 4.997400556747444e-13
+0, 28, 0, 4.521334417972867e-08, 4.52133459287687e-16, 4.995391063269117e-13
+0, 29, 0, 4.625628946541838e-08, 4.625628815077889e-16, 5.16989337079329e-13
+0, 30, 0, 3.818906790797882e-08, 3.81890693684534e-16, 4.838832558963498e-13
+0, 31, 0, 3.396268510869049e-08, 3.396268646552989e-16, 4.561915321542346e-13
+0, 32, 0, 2.933203724353461e-08, 2.933203716516306e-16, 4.070221822904174e-13
+0, 33, 0, 2.571867874223699e-08, 2.571867850179717e-16, 4.065958054618198e-13
+
+Elapsed times:
+Parameter Reading : User=0.000000s Real=0.026717s Sys=0.000000s [Cpu=0.0%]
+    Initialization: User=0.020000s Real=0.190825s Sys=0.010000s [Cpu=15.7%]
+         Execution: User=11662.380000s Real=787.204129s Sys=0.260000s [Cpu=1481.5%]
+      Finalization: User=0.000000s Real=0.138917s Sys=0.000000s [Cpu=0.0%]
+             Total: User=11662.4s Real=787.561s Sys=0.27s
