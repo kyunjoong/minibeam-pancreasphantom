@@ -1,0 +1,42 @@
+includeFile = RW3_Geometry.txt
+
+##################Energy ###############
+
+i:So/Example/NumberOfHistoriesInRun = 100000000
+
+##################### Manuable Parameters #####################
+
+i:Ts/NumberOfThreads = -1  # 0 1 2 3 
+i:Ts/Seed = 457011
+i:Ts/ShowHistoryCountAtInterval = 10000000
+b:Ts/ShowCPUTime = "True"
+i:Tf/Verbosity = 1
+i:Sim/parameter = 7 # unitless
+
+################### Record ###########################
+
+
+s:Sc/RW3record/Quantity                  = "DoseToMedium"
+s:Sc/RW3record/Component                 = "RW3detecter"
+b:Sc/RW3record/OutputToConsole           = "True"
+s:Sc/RW3record/IfOutputFileAlreadyExists = "Overwrite"
+s:Sc/RW3record/OutputType                = "csv"
+s:Sc/RW3record/OutputFile	            = "../DosetoMedium/RW3_DDP_DoseToMedium_"+ Sim/parameter 
+sv:Sc/RW3record/Report		    = 3 "Sum" "Mean" "Standard_Deviation" 
+
+s:Sc/RW3Fluence/Quantity                  = "Fluence"
+s:Sc/RW3Fluence/Component                 = "RW3detecter"
+b:Sc/RW3Fluence/OutputToConsole           = "True"
+s:Sc/RW3Fluence/IfOutputFileAlreadyExists = "Overwrite"
+s:Sc/RW3Fluence/OutputType                = "csv"
+s:Sc/RW3Fluence/OutputFile	            = "../Fluence/RW3_DDP_Fluence" + Sim/parameter
+sv:Sc/RW3Fluence/Report		    = 3 "Sum" "Mean" "Standard_Deviation" 
+
+
+s:Sc/RW3EnergyDeposit/Quantity                  = "EnergyDeposit"
+s:Sc/RW3EnergyDeposit/Component                 = "RW3detecter"
+b:Sc/RW3EnergyDeposit/OutputToConsole           = "True"
+s:Sc/RW3EnergyDeposit/IfOutputFileAlreadyExists = "Overwrite"
+s:Sc/RW3EnergyDeposit/OutputType                = "csv"
+s:Sc/RW3EnergyDeposit/OutputFile	            = "../EnergyDeposit/RW3_DDP_EnergyDeoposit" + Sim/parameter
+sv:Sc/RW3EnergyDeposit/Report		    = 3 "Sum" "Mean" "Standard_Deviation" 
