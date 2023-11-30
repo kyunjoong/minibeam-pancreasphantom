@@ -1,0 +1,25 @@
+includeFile = CT_Geometry_Experiment.txt
+
+##################Energy ###############
+
+i:So/Example/NumberOfHistoriesInRun = 1000000000
+i:Ts/ShowHistoryCountAtInterval = 100000000
+i:Ts/Seed = 7049213
+i:Sim/parameter = 15 # unitless
+
+##################### Manuable Parameters #####################
+
+i:Ts/NumberOfThreads = -1  # 0 1 2 3 
+b:Ts/ShowCPUTime = "True"
+i:Tf/Verbosity = 1
+
+################### Record ###########################
+
+s:Sc/DoseOnCTGrid/Quantity                  = "DoseToMedium"
+s:Sc/DoseOnCTGrid/Component                 = "Patient"
+b:Sc/DoseOnCTGrid/OutputToConsole           = "False"
+s:Sc/DoseOnCTGrid/IfOutputFileAlreadyExists = "Overwrite"
+s:Sc/DoseOnCTGrid/OutputType                = "DICOM"
+b:Sc/DoseOnCTGrid/DICOMOutput32BitsPerPixel = "True"
+s:Sc/DoseOnCTGrid/OutputFile	            = "../DoseonCTgrid/1_DoseonCTGGrid_Minibeam_CT_MPS"+ Sim/parameter
+
