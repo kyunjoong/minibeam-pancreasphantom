@@ -1,0 +1,51 @@
+includeFile = General_World.txt
+
+################ MCP-96(Metspec 203) Component #############
+
+sv:Ma/MCP96/Components = 3 "Bismuth" "Lead" "Tin"
+uv:Ma/MCP96/Fractions = 3 0.525 0.32 0.155
+d:Ma/MCP96/Density = 9.85 g/cm3
+d:Ma/MCP96/MeanExcitationEnergy= 771 eV
+s:Ma/MCP96/DefaultColor = "grey"
+
+
+##################### Shield #####################
+
+s:Ge/Shield/Type     = "TsBox"
+s:Ge/Shield/Material = "MCP96"
+s:Ge/Shield/Parent   = "World"
+d:Ge/Shield/HLX      = 5.5 cm
+d:Ge/Shield/HLY      = 7. cm
+d:Ge/Shield/HLZ      = 1.25 cm
+d:Ge/Shield/TransX   = -1. cm  # - to left , + to right
+d:Ge/Shield/TransY   = -4.0 cm # - to down, + to up 
+d:Ge/Shield/TransZ   = 24.2 cm   # default 23.2 (distance between shield and collimator = 0) + 1 cm  (shelf6) / default 29.45 + 1cm 30.45 cm (shelf7) 
+d:Ge/Shield/RotX     = 0. deg
+d:Ge/Shield/RotY     = 0. deg
+d:Ge/Shield/RotZ     = 0. deg
+
+#################### Shield hole #####################
+
+s:Ge/Hole/Type     = "TsBox"
+s:Ge/Hole/Material = "Air"
+s:Ge/Hole/Parent   = "Shield"
+#b:Ge/Hole/IsParallel = "True"
+d:Ge/Hole/HLX      = 2 cm
+d:Ge/Hole/HLY      = 2. cm
+d:Ge/Hole/HLZ      = 1.25 cm
+d:Ge/Hole/TransX   = 0. m
+d:Ge/Hole/TransY   = 0. m
+d:Ge/Hole/TransZ   = 0. m
+d:Ge/Hole/RotX     = 0. deg
+d:Ge/Hole/RotY     = 0. deg
+d:Ge/Hole/RotZ     = 0. deg
+
+
+
+
+
+
+
+
+
+
