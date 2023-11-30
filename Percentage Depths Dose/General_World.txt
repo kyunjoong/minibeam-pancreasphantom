@@ -1,7 +1,0 @@
-####################### Geometry ############################
-
-s:Ge/World/Material    = "Air"
-d:Ge/World/HLX         = 2.0 m
-d:Ge/World/HLY         = 2.0 m
-d:Ge/World/HLZ         = 2.0 m
-b:Ge/World/Invisible   = "TRUE"
